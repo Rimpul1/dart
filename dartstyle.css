@@ -2,60 +2,112 @@
     margin: 0;
     padding: 0;
 }
-h1{
+
+html{
+    scroll-behavior: smooth;
+}
+
+h1 {
     font-size: 55px;
     font-family: 'Raleway', sans-serif;
     color: black;
 }
-h2{
+
+h2 {
     font-size: 45px;
     font-family: 'Raleway', sans-serif;
     color: black;
 }
-h3{
+
+h3 {
     font-size: 25px;
     font-family: 'Raleway', sans-serif;
     color: black;
 }
-p{
+
+p {
     font-size: 18px;
     font-family: 'Raleway', sans-serif;
     color: #b0bec5;
 }
-li{
+
+li {
     display: inline-block;
 }
-ul{
+
+ul {
     list-style: none;
 }
-input{
+
+input {
     border: 1px solid black;
     outline: none;
 }
-textarea{
+
+textarea {
     border: 1px solid black;
     outline: none;
 }
-.container{
+
+.container {
     width: 1600px;
     margin: 0 auto;
 }
-nav{
+
+nav {
     padding-top: 50px;
-    padding-bottom: 170px;
 }
-.navbar{
+
+/* БУРГЕР МЕНЮ */
+
+
+.nav_menu.active{
+    max-height: 999px;
+}
+
+.burger{
+    display: none;
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    transition: 0.3s;
+    position: relative;
 }
-.nav_link{
-    margin-left: 25px;
-}
+
 .nav_item{
     display: inline-block;
-    margin-right: 25px;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 15px;
 }
-.nav_button{
+.nav_item:hover::after{
+    transform: translate(0);
+}
+
+.nav_item::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #003a34;
+    transform: translate(-100%);
+    transition: 0.5s;
+}
+
+/* БУРГЕР МЕНЯ */
+
+
+.nav_link {
+    margin-left: 25px;
+}
+
+
+.nav_button {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 5px;
@@ -71,11 +123,13 @@ nav{
     box-shadow: none;
     margin-right: -30px;
 }
-.header_block{
+
+.header_block {
     display: flex;
     justify-content: space-between;
 }
-header{
+
+header {
     background-image: url(./img/headerbg.png);
     position: relative;
     overflow: hidden;
@@ -84,18 +138,21 @@ header{
     background-repeat: no-repeat;
 }
 
-.header_text{
+.header_text {
     width: 590px;
 }
-.header_title{
+
+.header_title {
     padding-bottom: 15px;
     color: #ffffff;
 }
-.header_descrip{
+
+.header_descrip {
     color: #eafbf8;
     line-height: 35px;
 }
-button{
+
+button {
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 20px;
@@ -108,7 +165,8 @@ button{
     color: #ffffff;
     box-shadow: 0px 6px 14px -2px #868686;
 }
-.button_header{
+
+.button_header {
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 20px;
@@ -122,8 +180,15 @@ button{
     color: white;
     box-shadow: 0px 6px 14px -2px #868686;
     margin-right: 30px;
+    cursor: pointer;
+    transition: 0.5s;
 }
-.button_header2{
+
+.button_header:hover{
+    background-color: rgb(133, 133, 133);
+}
+
+.button_header2 {
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 20px;
@@ -138,8 +203,15 @@ button{
     box-shadow: 0px 6px 14px -2px #868686;
     margin-right: 30px;
     margin-top: 25px;
+    cursor: pointer;
+    transition: 0.5s;
 }
-a{
+
+.button_header2:hover{
+    background-color: rgb(133, 133, 133);
+}
+
+a {
     font-family: 'Raleway', sans-serif;
     font-size: 15px;
     font-weight: 600;
@@ -147,113 +219,158 @@ a{
     text-decoration: none;
     font-family: 'Raleway', sans-serif;
 }
-a:hover{
+
+a:hover {
     color: #061e37;
 }
-.useful{
+
+.useful {
     padding-top: 100px;
     padding-bottom: 100px;
 }
-.useful_header{
+
+.useful_header {
     text-align: center;
     width: 600px;
     margin: 0 auto;
 }
-.useful_title{
+
+.useful_title {
     color: #b0bec5;
     padding-top: 20px;
 }
-.useful_text{
+
+.useful_text {
     padding-top: 20px;
     line-height: 30px;
 }
-.useful_cards{
+
+.useful_cards {
     display: flex;
     justify-content: space-between;
     padding-top: 100px;
 }
-.useful_card{
+
+.useful_card {
     width: 350px;
-    height: 250px;
     text-align: center;
 }
-.useful_card_title{
+
+.useful_card_title {
     padding-top: 35px;
     padding-bottom: 15px;
 }
-.useful_button{
+
+.useful_button {
     text-align: center;
     padding-top: 50px;
     padding-bottom: 100px;
+
 }
-.useful_card_flex{
+
+#useful_b:hover{
+    background-color: rgb(133, 133, 133);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.useful_card_flex {
     display: flex;
     height: 150px;
     justify-content: space-between;
 }
-.flex_card_img{
+
+.flex_card_img {
     margin-right: 20px;
 }
-.flex_card{
+
+.flex_card {
     flex-grow: 1;
     width: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#useful_card1{
+
+#useful_card1 {
     background-color: #80d8ff;
 }
-#useful_card2{
+
+#useful_card2 {
     background-color: #82b1ff;
 }
-#useful_card3{
+
+#useful_card3 {
     background-color: #b388ff;
 }
-#useful_card4{
+
+#useful_card4 {
     background-color: #ea80fc;
 }
-.flex_card_discrip{
+
+.flex_card_discrip {
     font-size: 20px;
     font-weight: 800;
     color: white;
 }
+
 .services{
     padding-bottom: 100px;
 }
+
 .services_head{
     text-align: center;
     padding-bottom: 50px;
 }
-.services_head_img{
+
+.services_head_descrip{
+    color: black;
+    font-weight: 700;
+}
+
+.services_head_img {
     width: 25x;
     height: 15px;
 }
+
+#iconS{
+    font-size: 20px;
+    padding-right: 20px;
+}
+
 .services_title{
     padding-bottom: 15px;
 }
-.services_head_descrip{
-    font-weight: 700;
-    color: black;
-    margin-left: 25px;
-}
-.services_head_card{
+
+.services_head_card {
     display: flex;
-    margin-bottom: 25px;
-    margin-left: 25px;
-    padding-top: 25px;
+    margin-bottom: 19px;
+    margin-left: 28px;
+    padding-top: 19px;
     position: relative;
 }
+
 .services_card{
-    width: 840px;
-    height: 250px;
+    width: 863px;
     margin-bottom: 50px;
-    box-shadow: 0px 6px 17px -10px
+    box-shadow: 0px 6px 17px -10px;
 }
+
 .services_body_card{
-    display: flex;
     padding-left: 25px;
+    width: 100%;
+    box-shadow: 6px 17px -10px;
+    box-sizing: border-box;
+    max-height: 0;
+    overflow: hidden;
+    transition: 1s;
 }
+
+.services_body_card img{
+    width: 320px;
+    height: 200px;
+}
+
 .button_services_card button{
     width: 15px;
     height: 20px;
@@ -264,45 +381,100 @@ a:hover{
     box-shadow: none;
     position: absolute;
     right: 10px;
+    top: 15px;
 }
+
 .services_cards{
     margin-bottom: 30px;
     display: flex;
     align-items: center;
     flex-direction: column
 }
+
 .services_body_text{
     margin-left: 25px;
     margin-right: 25px;
     color: black;
     line-height: 30px;
 }
-.custumer{
+.servcies_body_padding{
+    padding-bottom: 25px;
+    display: flex;
+}
+
+/* СЕЛЕКТОР */
+
+.services_card.active .services_body_card{
+    max-height: 900px;
+}
+.services_head_card.active::after{
+    transform: rotate(180deg);
+}
+/* СЕЛЕКТОР */
+
+
+/* СЛАЙДЕР */
+
+.custumer .swiper-container {
+    overflow: hidden;
+    height: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.custumer .swiper-slide {
+    width: 100%;
+    height: 250px;
+}
+
+.custumer .swiper-wrapper {
+    height: max-content;
+
+}
+
+.custumer .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+/* СЛАЙДЕР */
+
+.custumer {
     background-image: url(./img/bg_cust.png);
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 100px;
-    padding-bottom: 100px;
 }
-.costumer_head{
-    width: 537px;
-    height: 305px;
+
+.costumer_head {
+    width: auto;
 }
-.costumer_card_head{
-    background-color: white;
+
+.costumer_card_head {
+    background-color: rgb(255, 255, 255);
     border-radius: 7px;
     padding-left: 25px;
-    padding-top: 25px;
     box-shadow: -1px 12px 17px -17px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
-.costumer_cards{
+
+.costumer_cards {
     display: flex;
     flex-direction: column;
 }
-.costumer_title{
+
+.costumer_title {
     color: white;
 }
-.costumer_text{
+
+.costumer_text {
     color: white;
     font-weight: 700;
     line-height: 25px;
@@ -310,30 +482,36 @@ a:hover{
     padding-bottom: 70px;
     padding-top: 15px;
 }
-.costumer_card{
+
+.costumer_card {
     width: 720px;
-    height: 100px;
     border-radius: 4px;
-    margin-bottom: 140px;
     line-height: 25px;
     display: flex;
     align-items: center;
 }
-.costumer_card_img{
+
+.costumer_card_img {
     margin-right: 25px;
 }
-.custumer_card_title{
+
+.custumer_card_title {
     font-weight: 700;
     color: black;
-    padding-bottom: 15px;
+    text-align: left;
+    margin-bottom: 10px;
 }
-.costumer_card_text{
+
+.costumer_card_text {
     font-style: oblique;
     margin-right: 25px;
     font-size: 15px;
-    padding-bottom: 25px;
+    padding-bottom: 5px;
+    text-align: left;
+    margin-top: 0;
 }
-.custumer_button{
+
+.custumer_button {
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 20px;
@@ -346,79 +524,211 @@ a:hover{
     background-color: #061e37;
     color: white;
     box-shadow: 0px 6px 14px -2px #868686;
-    margin-right: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+    te
 }
-.costumer_block{
+.custumer_button:hover{
+    background-color: rgb(133, 133, 133);
+}
+
+.costumer_block {
     display: flex;
     justify-content: space-between;
 }
-.team{
+
+.swiper-button-prev {
+    transform: translate(-50%, 15px) rotate(90deg);
+    left: 50%;
+    top: 0;
+    border: none;
+    outline: none;
+    color: black;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+button.swiper-button-prev::after {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.swiper-button-next {
+    transform: translate(-50%, 235px) rotate(90deg);
+    left: 50%;
+    bottom: 0;
+    border: none;
+    outline: none;
+    color: black;
+    background-color: transparent;
+    font-size: 25px;
+    box-shadow: none;
+}
+
+button.swiper-button-next::after {
+    font-size: 25px;
+    font-weight: 900;
+}
+/* СЛАЙДЕР С МОРДАМИ */
+.swiper-container{
+    width: 750px;
+}
+.gallery {
+    width: 750px;
+    height: 480px;
+}
+
+.gallery-slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gallery-slider .swiper-slider {
+    width: auto;
+    height: 400px;
+}
+
+.gallery-slider img {
+    display: block;
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.gallery-thumbs {
+    width: 100%;
+    height: 220px;
+    padding: 0;
+}
+
+.gallery-thumbs .swiper-slide {
+    width: 300px;
+    height: 100%;
+    text-align: center;
+    opacity: .1;
+    display: flex;
+    align-items: center;
+}
+
+.gallery-thumbs .swiper-slide-active {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.swiper-wrapper-team{
+    height: 120px;
+    width: 120px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 50%;
+    user-select: none;
+}
+.swiper-wrapper-team::before{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 10px 7px #000000;
+    user-select: none;
+}
+.gallery-thumbs .swiper-slide-active .swiper-wrapper-team{
+    height: 170px;
+    width: 170px;
+    transition: 0.5s;
+    border: 15px solid rgb(255, 255, 255);
+    box-shadow: 0 0 20px 0 rgb(173, 173, 173);
+}
+/* СЛАЙДЕР С МОРДАМИ КОНЕЦ*/
+
+.team {
     padding-top: 100px;
     padding-bottom: 100px;
 }
-.team_head{
+
+.team_head {
     text-align: center;
     padding-bottom: 50px;
 }
-.team_head_title{
+
+.team_head_title {
     padding-bottom: 20px;
 }
-.team_head_text{
+
+.team_head_text {
     line-height: 30px;
 }
-.team_card_img{
+
+.team_card_img {
     margin-left: 15px;
     margin-right: 15px;
 }
-.team_cards{
+
+.team_cards {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.team_card_title{
+
+.team_card_title {
     font-size: 18px;
     font-weight: 700;
     color: black;
     padding-bottom: 10px;
+    text-align: center;
+    padding-top: 50px;
+    user-select: none;
 }
-.team_card_text{
-    width: 680px;
+
+.team_card_text {
     height: 190px;
     text-align: center;
 }
-.team_card_desrip{
+
+.team_card_desrip {
     line-height: 30px;
+    text-align: center;
+    user-select: none;
 }
+
 a.team_card_icons {
     color: #90a4ae;
     border-radius: 12px;
     font-size: 20px;
     padding: 15px 15px 15px 15px;
 }
-.team_card_buttons{
+
+.team_card_buttons {
     display: flex;
     justify-content: center;
     padding-top: 25px;
     list-style: none;
 }
-.team_card_bottom{
+
+.team_card_bottom {
     display: flex;
     justify-content: space-around;
     padding-top: 30px;
 }
-.contact{
+
+.contact {
     background-color: #fafafa;
     padding-top: 50px;
 }
-.contact_title{
+
+.contact_title {
     padding-bottom: 15px;
 }
-.contact_head{
+
+.contact_head {
     text-align: center;
-    width: 550px;
     margin: 0 auto;
 }
-.contact_form{
+
+.contact_form {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 50px 50px 150px 50px;
@@ -428,28 +738,35 @@ a.team_card_icons {
     margin: 0 auto;
     padding: 50px;
 }
-#form_name{
+
+#form_name {
     grid-column: 1/3;
 }
-#form_last{
+
+#form_last {
     grid-column: 3/5;
 }
-#form_mail{
+
+#form_mail {
     grid-column: 1/3;
 }
-#form_phone{
+
+#form_phone {
     grid-column: 3/5;
 }
-.scales{
+
+.scales {
     grid-column: 1/3;
     grid-row: 4/5;
     font-family: "Open Sans", sans-serif;
     font-weight: 500;
 }
-#scales{
+
+#scales {
     margin-right: 10px;
 }
-input{
+
+input {
     border-radius: 5px;
     padding: 15px;
     box-sizing: border-box;
@@ -458,7 +775,8 @@ input{
     font-weight: 600;
     background-color: #fafafa;
 }
-textarea{
+
+textarea {
     transition: 0.5s;
     grid-column: 1/5;
     padding: 15px;
@@ -471,7 +789,8 @@ textarea{
     font-weight: 600;
     background-color: transparent;
 }
-.button_form{
+
+.button_form {
     grid-column: 4/5;
     padding-left: 30px;
     padding-right: 30px;
@@ -484,29 +803,41 @@ textarea{
     background-color: #1de9b6;
     color: #ffffff;
     box-shadow: 0px 6px 14px -2px #868686;
+    cursor: pointer;
+    transition: 0.5s;
 }
-footer{
+
+.button_form:hover{
+    background-color: #b0bec5;
+}
+
+footer {
     padding-top: 70px;
     padding-bottom: 70px;
     background-color: #061e37;
 }
-.footer_cards{
+
+.footer_cards {
     display: flex;
     justify-content: space-between;
 }
-.footer_nav{
+
+.footer_nav {
     display: flex;
     justify-content: space-between;
 }
-.footer_item{
+
+.footer_item {
     margin-left: 50px;
 }
-.footer_card_item{
+
+.footer_card_item {
     font-size: 15px;
     font-weight: 500;
     padding-top: 35px;
 }
-.footer_card_item:not(:last-child)::after{
+
+.footer_card_item:not(:last-child)::after {
     content: "";
     margin-left: 15px;
     margin-right: 15px;
@@ -516,156 +847,1068 @@ footer{
     height: 5px;
     display: inline-block;
 }
-.footer_card_icons{
+
+.footer_card_icons {
     color: #90a4ae;
     border-radius: 12px;
     font-size: 20px;
     padding: 5px 5px 5px 5px;
 }
-.footer_card_buttons{
+
+.footer_card_buttons {
     padding-top: 25px;
     list-style: none;
 }
-@media screen and (max-width: 1440px){
-    .container{
-        width: 1250px;
+
+@media screen and (max-width: 1440px) {
+    .container {
+        width: 1000px;
     }
-}
-@media screen and (max-width: 1024px){
-    .container{
-        width: 875px;
+    .header_block{
+        display: flex;
+        justify-content: space-between;
     }
-    nav{
-        padding-bottom: 140px;
+    .header_video iframe{
+        width: 500px;
+        height: 300px;
     }
-    .header_block {
-    display: flex;
-    flex-direction: column;
+    .header_title{
+        font-size: 40px;
     }
-    .header_video{
-    padding-top: 50px;
+    .header_text{
+        width: 415px;
+    }
+    .costumer_head{
+        width: 400px;
+    }
+    .useful_easy_title{
+        font-size: 40px;
     }
     .useful_cards{
-    align-items: baseline
+        display: flex;
+        align-items: baseline;
+        padding-top: 100px;
     }
     .useful_card{
-        width: 233px;
-    }
-    .useful_card_flex{
-        height: 111px;
+        width: 300px;
     }
     .costumer_card{
-        width: 545px;
+        width: 610px;
     }
 }
-@media screen and (max-width: 768px){
-    .container{
-        width: 700px;
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 730px;
     }
-    .nav_item{
-        margin-right: 0px;
+    /* БУРГЕР */
+
+    .nav_menu{
+        overflow: hidden;
+        max-height: 0;
+        transition: 0.5s;        
+        position: absolute;
+        right: 0;
+        top: 120px;
+        z-index: 99;
+
     }
-    .nav_button{
-    margin-right: -9px;
+    .nav_link{
+        color: black;
+        font-size: 20px;
     }
-    .useful_card_flex{
+    .burger{
+        display: block;
+        font-size: 45px;
+        color: white;
+    }
+
+    .nav_list {
+        background-color: rgb(255, 255, 255);
+        width: 150px;
+        margin: 0 auto;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+
+/* БУРГЕР */
+    .header_block{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    .header_video iframe{
+        width: 500px;
+        height: 300px;
+    }
+    .header_title{
+        font-size: 40px;
+    }
+    .header_text{
+        width: auto;
+        text-align: center;
+    }
+
+
+    .services_card {
+        width: 745px;
+        height: none;
+    }
+    .header_video iframe{
+        width: 500px;
+        height: 300px;
+    }
+    .nav_button {
+        margin-right: -9px;
+    }
+    .button_header2{
+        margin-bottom: 50px;
+    }
+    .useful_card_flex {
         height: 82px;
     }
-    .useful_card{
+
+    .useful_card {
         width: 186px;
     }
-    .useful_button{
+
+    .useful_button {
         padding-top: 86px;
         padding-bottom: 70px;
     }
-    .flex_card_img{
+
+    .flex_card_img {
         width: 40px;
         height: 40px;
         margin-right: 9px;
     }
-    .flex_card_discrip{
+
+    .flex_card_discrip {
         font-size: 15px;
     }
-    .services_card{
-        width: 705px;
-        height: 266px;
-    }
-    .services_body_card img{
+
+    .services_body_card img {
         width: 220px;
         height: 170px;
     }
-    .services_body_text{
+
+    .services_body_text {
         font-size: 17px;
     }
-    .costumer_head{
+
+    .costumer_head {
         text-align: center;
         margin: 0 auto;
-        width: 504px;
-        padding-bottom: 50px;
+        width: auto;
     }
-    .costumer_block{
+
+    .costumer_block {
         flex-direction: column;
     }
-    .costumer_cards{
+
+    .costumer_cards {
         padding-top: 70px;
         align-items: center;
     }
-    .footer_item{
+
+    .footer_item {
         margin-left: 28px;
     }
-    @media screen and (max-width: 425px){
-    .container{
-        width: 370px;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        width: 415px;
     }
-    nav{
-        display: none;
+
+/* БУРГЕР */
+
+    .nav_menu{
+        overflow: hidden;
+        max-height: 0;
+        transition: 0.5s;        
+        position: absolute;
+        right: 0;
+        top: 120px;
+        z-index: 99;
+
     }
-    .header_block{
+    .nav_link{
+        color: black;
+        font-size: 20px;
+    }
+    .burger{
+        display: block;
+        font-size: 45px;
+        color: white;
+    }
+
+    .nav_list {
+        background-color: rgb(255, 255, 255);
+        width: 150px;
+        margin: 0 auto;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+
+/* БУРГЕР */
+
+
+    .services_card {
+        width: 379px;
+    }
+    .header_block {
         padding-top: 50px;
     }
-    .header_text{
+
+    .header_text {
         width: 370px;
     }
-    .header_title{
+
+    .header_title {
         font-size: 45px;
     }
-    .header_descrip{
+
+    .header_descrip {
         font-size: 15px;
         font-weight: 500;
     }
-    .header_video{
+
+    .header_video {
         display: none;
     }
-    .buttons_header{
+    .services_body_card{
+        padding-right: 25px;
+    }
+    .servcies_body_padding{
+        display: flex;
+        flex-direction: column;
+    }
+    .services_body_text{
+        margin: 0;
+        margin-top: 10px;
+    }
+    .services_body_card img {
+        width: auto;
+    }
+    .buttons_header {
         text-align: center;
         padding-top: 70px;
     }
-    .useful_header{
+    .costumer_head {
+        text-align: center;
+        margin: 0 auto;
+        width: auto;
+        padding-bottom: 50px;
+    }
+    .costumer_card {
+        width: 381px;
+        border-radius: 53px;
+        line-height: 20px;
+        align-items: center;
+    }
+    .custumer .swiper-container {
+        overflow: hidden;
+        position: relative;
+    }
+    .costumer_card_text {
+        font-style: oblique;
+        margin-right: 25px;
+        font-size: 17px;
+        padding-bottom: 5px;
+        text-align: left;
+        margin-top: 0;
+    }
+    .swiper-button-prev {
+        display: none;
+    }
+    .swiper-button-next {
+        display: none;
+    }
+    .team_head{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .gallery{
+        width: 300px;
+    }
+    .gallery-thumbs{
         width: auto;
     }
-    .useful_easy_title{
+    .useful{
+        padding-bottom: 50px;
+    }
+    .useful_header {
+        width: auto;
+    }
+
+    .useful_easy_title {
         font-size: 35px;
     }
-    .useful_title{
+
+    .useful_title {
         font-size: 20px;
     }
-    .useful_text{
+
+    .useful_text {
         font-size: 15px;
     }
-    .useful_cards{
+
+    .useful_cards {
+        display: flex;
         flex-direction: column;
-        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
     }
-    .useful_card{
+
+    .useful_card {
         width: 368px;
         padding-bottom: 20px;
     }
-    .useful_button{
-        padding-top: 20px;
+    .useful_button {
+        padding-top: 40px;
     }
-    .useful_card_flex{
+
+    .useful_card_flex {
         display: none;
     }
-    .services_title{
+    .services{
+        padding-bottom: 50px;
+    }
+    .services_title {
         font-size: 35px;
     }
+    .contact_head{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .contact_form {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 50px 50px 50px 150px;
+        grid-gap: 30px;
+        background-color: transparent;
+        margin: 0 auto;
+        padding: 22px;
+        width: auto;
+    }
+    #form_name{
+        grid-column: 1/1;
+    }
+    #form_last{
+        grid-column: 1/1;
+    }
+    #form_mail {
+        grid-column: 1/1;
+    }
+    #form_phone {
+        grid-column: 1/1;
+    }
+    #form_text{
+        grid-column: 1/1;
+    }
+    textarea{
+        grid-column: 1/1;
+    }
+    .scales {
+        grid-row: none;
+    }
+    #form_button{
+        grid-column: 1/1;
+    }
+    .footer_cards {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer_item {
+        margin-left: 21px;
+        margin-top: 20px;
+        display: flex;
+    }
+    .footer_list{
+        display: flex;
+    }
+    .footer_card_buttons{
+        display: flex;
+    }
+    .footer_nav{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+@media screen and (max-width: 425px) {
+        .container {
+            width: 370px;
+        }
+         
+        nav{
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+    /* БУРГЕР */
+        .swiper-slide{
+            width: 100%!important;
+        }
+        .swiper-wrapper{
+            width: 100%!important;
+        }
+        .costumer-slider, .swiper-container{
+            width: 100%!important;
+        }
+    .nav_menu{
+        overflow: hidden;
+        max-height: 0;
+        transition: 0.5s;        
+        position: absolute;
+        right: 0;
+        top: 120px;
+        z-index: 99;
+
+    }
+    .nav_link{
+        color: black;
+        font-size: 20px;
+    }
+    .burger{
+        display: block;
+        font-size: 45px;
+        color: white;
+    }
+
+    .nav_list {
+        background-color: rgb(255, 255, 255);
+        width: 150px;
+        margin: 0 auto;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+
+/* БУРГЕР */
+        .services_card {
+            width: 379px;
+        }
+        .header_block {
+            padding-top: 50px;
+        }
+    
+        .header_text {
+            width: 370px;
+        }
+    
+        .header_title {
+            font-size: 45px;
+        }
+    
+        .header_descrip {
+            font-size: 15px;
+            font-weight: 500;
+        }
+    
+        .header_video {
+            display: none;
+        }
+        .services_head{
+            width: 360px;
+        }
+        .services_card{
+            width: 350px;
+        }
+        .services_body_card{
+            padding-right: 25px;
+        }
+        .servcies_body_padding{
+            display: flex;
+            flex-direction: column;
+        }
+        .services_body_text{
+            margin: 0;
+            margin-top: 10px;
+        }
+        .services_body_card img {
+            width: auto;
+        }
+        .buttons_header {
+            text-align: center;
+            padding-top: 70px;
+        }
+        .custumer{
+            padding-bottom: 0;
+        }
+        .costumer_head {
+            text-align: center;
+            margin: 0 auto;
+            width: auto;
+            padding-bottom: 50px;
+        }
+        .costumer_card {
+            width: 360px;
+            border-radius: 53px;
+            line-height: 20px;
+            align-items: center;
+        }
+        .custumer .swiper-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .costumer_card_text {
+            font-style: oblique;
+            margin-right: 25px;
+            font-size: 17px;
+            padding-bottom: 5px;
+            text-align: left;
+            margin-top: 0;
+        }
+        .swiper-button-prev {
+            display: none;
+        }
+        .swiper-button-next {
+            display: none;
+        }
+        .team_head{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .gallery{
+            width: 300px;
+        }
+        .gallery-thumbs{
+            width: auto;
+        }
+        .useful{
+            padding-bottom: 50px;
+        }
+        .useful_header {
+            width: auto;
+        }
+    
+        .useful_easy_title {
+            font-size: 35px;
+        }
+    
+        .useful_title {
+            font-size: 20px;
+        }
+    
+        .useful_text {
+            font-size: 15px;
+        }
+    
+        .useful_cards {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .useful_card {
+            width: 368px;
+            padding-bottom: 20px;
+        }
+        .useful_button {
+            padding-top: 40px;
+        }
+    
+        .useful_card_flex {
+            display: none;
+        }
+        .services{
+            padding-bottom: 50px;
+        }
+        .services_title {
+            font-size: 35px;
+        }
+        .contact_head{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .contact_form {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 50px 50px 50px 50px 150px;
+            grid-gap: 30px;
+            background-color: transparent;
+            margin: 0 auto;
+            padding: 22px;
+            width: auto;
+        }
+        #form_name{
+            grid-column: 1/1;
+        }
+        #form_last{
+            grid-column: 1/1;
+        }
+        #form_mail {
+            grid-column: 1/1;
+        }
+        #form_phone {
+            grid-column: 1/1;
+        }
+        #form_text{
+            grid-column: 1/1;
+        }
+        textarea{
+            grid-column: 1/1;
+        }
+        .scales {
+            grid-row: none;
+        }
+        #form_button{
+            grid-column: 1/1;
+        }
+        .footer_cards {
+            display: flex;
+            flex-direction: column;
+        }
+        .footer_item {
+            margin-left: 21px;
+            margin-top: 20px;
+            display: flex;
+        }
+        .footer_list{
+            display: flex;
+        }
+        .footer_card_buttons{
+            display: flex;
+        }
+        .footer_nav{
+            display: flex;
+            flex-direction: column;
+        }
+
+}
+@media screen and (max-width: 375px) {
+        .container {
+            width: 320px;
+        }
+    /* БУРГЕР */
+    nav{
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+    .nav_menu{
+        overflow: hidden;
+        max-height: 0;
+        transition: 0.5s;        
+        position: absolute;
+        right: 0;
+        top: 120px;
+        z-index: 99;
+
+    }
+    .nav_link{
+        color: black;
+        font-size: 20px;
+    }
+    .burger{
+        display: block;
+        font-size: 35px;
+        color: white;
+    }
+
+    .nav_list {
+        background-color: rgb(255, 255, 255);
+        width: 150px;
+        margin: 0 auto;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+
+/* БУРГЕР */
+        .services_card {
+            width: 300px;
+        }
+        .header_block {
+            padding-top: 50px;
+        }
+    
+        .header_text {
+            width: 370px;
+        }
+    
+        .header_title {
+            font-size: 35px;
+            text-align: center;
+        }
+    
+        .header_descrip {
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .header_video {
+            display: none;
+        }
+        .buttons_header {
+            padding-top: 40px;
+            
+        }
+        .costumer_head {
+            text-align: center;
+            margin: 0 auto;
+            width: auto;
+            padding-bottom: 50px;
+        }
+        .costumer_card {
+            width: 300px;
+            border-radius: 50px;
+            line-height: 19px;
+            display: flex;
+            flex-direction: column;
+        }
+        .costumer_title{
+            font-size: 35px;
+        }
+        .custumer .swiper-container {
+            overflow: hidden;
+            height: 750px;
+            position: relative;
+        }
+        .costumer_card_text {
+            font-style: oblique;
+            margin-right: 25px;
+            font-size: 17px;
+            padding-bottom: 5px;
+            text-align: left;
+            margin-top: 0;
+        }
+        .swiper-button-prev {
+            display: none;
+        }
+        .swiper-button-next {
+            display: none;
+        }
+        .useful_header {
+            width: auto;
+        }
+    
+        .useful_easy_title {
+            font-size: 35px;
+        }
+    
+        .useful_title {
+            font-size: 20px;
+        }
+        .useful_card_title{
+            margin: 0 auto;
+        }
+        .useful_text {
+            font-size: 15px;
+        }
+    
+        .useful_cards {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+    
+        .useful_card {
+            width: auto;
+            padding-bottom: 20px;
+        }
+        .useful_card_text{
+            width: 320px;
+            font-size: 15px;
+        }
+        .useful_button {
+            padding-top: 20px;
+        }
+    
+        .useful_card_flex {
+            display: none;
+        }
+        .services_head{
+            width: 320px;
+        }
+        .services_title {
+            font-size: 35px;
+        }
+        .contact_form {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 50px 50px 150px 50px;
+            width: 275px;
+            background-color: transparent;
+            margin: 0 auto;
+            margin-top: 25px;
+        }
+        #form_name{
+            grid-column: 1/1;
+        }
+        #form_last{
+            grid-column: 1/1;
+        }
+        #form_mail {
+            grid-column: 1/1;
+        }
+        #form_phone {
+            grid-column: 1/1;
+        }
+        #form_text{
+            grid-column: 1/1;
+        }
+        textarea{
+            grid-column: 1/1;
+        }
+        .scales {
+            grid-row: none;
+        }
+        #form_button{
+            grid-column: 1/1;
+        }
+        .footer_cards {
+            display: flex;
+            flex-direction: column;
+        }
+        .footer_item {
+            margin-left: 21px;
+            margin-top: 20px;
+            display: flex;
+    
+        }
+
+        .contact{
+            margin-bottom: 25px;
+        }
+        .footer_list{
+            display: flex;
+        }
+        .footer_card_buttons{
+            display: flex;
+        }
+        .footer_block{
+            margin-left: 15px;
+        }
+        .footer_nav{
+            display: flex;
+            flex-direction: column;
+        }
+}
+@media screen and (max-width: 320px) {
+    .container {
+        width: 300px;
+    }
+    /* БУРГЕР */
+    .navbar >a{
+        display: inline-block;
+        width: 100%;    
+    }
+    .navbar{
+        height: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 45px;
+        margin-right: 45px;
+    }
+    .nav_menu{
+        overflow: hidden;
+        max-height: 0;
+        transition: 0.5s;        
+        position: absolute;
+        right: 0;
+        top: 120px;
+        z-index: 99;
+
+    }
+    .nav_link{
+        color: black;
+        font-size: 20px;
+    }
+    .burger{
+        display: block;
+        font-size: 35px;
+        color: white;
+    }
+
+    .nav_list {
+        background-color: rgb(255, 255, 255);
+        width: 150px;
+        margin: 0 auto;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+
+/* БУРГЕР */
+    .services_card {
+        width: 300px;
+    }
+    .header_block {
+        padding-top: 50px;
+    }
+
+    .header_text {
+        width: auto;
+    }
+    .header_descrip {
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .header_video {
+        display: none;
+    }
+    .buttons_header {
+        padding-top: 40px;
+        
+    }
+    .costumer_head {
+        text-align: center;
+        margin: 0 auto;
+        width: auto;
+        padding-bottom: 50px;
+    }
+    .costumer_card {
+        width: 300px;
+        border-radius: 53px;
+        line-height: 19px;
+        display: flex;
+        flex-direction: column;
+    }
+    .costumer_title{
+        font-size: 40px;
+    }
+    .custumer .swiper-container {
+        overflow: hidden;
+        height: 750px;
+        position: relative;
+    }
+    .costumer_card_text {
+        font-style: oblique;
+        margin-right: 25px;
+        font-size: 17px;
+        padding-bottom: 5px;
+        text-align: left;
+        margin-top: 0;
+    }
+    .swiper-button-prev {
+        display: none;
+    }
+    .swiper-button-next {
+        display: none;
+    }
+    .useful_header {
+        width: auto;
+    }
+
+    .useful_easy_title {
+        font-size: 35px;
+    }
+
+    .useful_title {
+        font-size: 20px;
+    }
+    .useful_card_title{
+        margin: 0 auto;
+    }
+    .useful_text {
+        font-size: 15px;
+    }
+    .team_head_title{
+        font-size: 40px;
+    }
+    .useful_easy_title{
+    font-size: 40px; 
+    }
+    .useful_cards {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .useful_card {
+        width: auto;
+        padding-bottom: 20px;
+    }
+    .useful_card_text{
+        width: 320px;
+        font-size: 15px;
+    }
+    .useful_button {
+        padding-top: 20px;
+    }
+
+    .useful_card_flex {
+        display: none;
+    }
+    .services_head{
+        width: auto;
+    }
+
+    .services_title {
+        font-size: 40px;
+    }
+    .contact_form {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 50px 150px 50px;
+        width: 265px;
+        background-color: transparent;
+        margin: 0 auto;
+        margin-top: 25px;
+    }
+    #form_name{
+        grid-column: 1/1;
+    }
+    #form_last{
+        grid-column: 1/1;
+    }
+    #form_mail {
+        grid-column: 1/1;
+    }
+    #form_phone {
+        grid-column: 1/1;
+    }
+    #form_text{
+        grid-column: 1/1;
+    }
+    textarea{
+        grid-column: 1/1;
+    }
+    .scales {
+        grid-row: none;
+    }
+    #form_button{
+        grid-column: 1/1;
+    }
+    .footer_cards {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer_item {
+        margin-left: 21px;
+        margin-top: 20px;
+        display: flex;
+
+    }
+    .contact{
+        margin-bottom: 25px;
+    }
+    .contact_title{
+        font-size: 45px;
+    }
+    .footer_list{
+        display: flex;
+    }
+    .footer_card_buttons{
+        display: flex;
+    }
+    .footer_nav{
+        display: flex;
+        flex-direction: column;
+    }
+}
